@@ -1,0 +1,12 @@
+.category-inputs{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+@media screen and (max-width: 700px){
+    .category-inputs{
+        flex-direction: column;
+        width: 100%;
+    }
+}

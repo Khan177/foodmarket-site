@@ -1,0 +1,9 @@
+main{
+    background-color: #fff;
+    margin: 3% 5%;
+    display: flex;
+    justify-content: center;
+}
+.section{
+    width: 100%;
+}
