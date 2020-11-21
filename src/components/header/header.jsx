@@ -4,25 +4,30 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 const Header = () => (
-    <header>
+    <header className="admin-header">
         <img src="/assets/logo.png" alt=""/>
         <nav>
-            <Link to="/orders">
+            <Link to="/admin/orders">
                 <Button size="large">
                     Заказы
                 </Button>
             </Link>
-            <Link to="/categories">
+            <Link to="/admin/addresses">
+                <Button size="large">
+                    Районы
+                </Button>
+            </Link>
+            <Link to="/admin/categories">
                 <Button  size="large">
                     Категории
                 </Button>
             </Link>
-            <Link to="/subcategories">
+            <Link to="/admin/subcategories">
                 <Button  size="large">
                     Подкатегории
                 </Button>
             </Link>
-            <Link to="/products">
+            <Link to="/admin/products">
                 <Button size="large">
                     Товары
                 </Button>

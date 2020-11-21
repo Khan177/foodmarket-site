@@ -1,15 +1,15 @@
-header{
+.admin-header{
     padding: 10px 0;
     background-color: #fff;
     border-bottom: 1px solid gray;
     text-align: center;
 }
 
-header img{
+.admin-header img{
     margin-bottom: 50px;
 }
 
-header nav{
+.admin-header nav{
     padding: 0 10px;
     width: 50%;
     margin: auto;
@@ -17,16 +17,16 @@ header nav{
     justify-content: space-between;
 }
 
-header button{
+.admin-header button{
     width: 140px;
 }
 
 @media screen and (max-width: 700px){
-    header nav{
+    .admin-header nav{
         width: 100%;
         flex-direction: column;
     }
-    header button{
+    .admin-header button{
         width: 120px;
     }
 }

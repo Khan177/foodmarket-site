@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { Button, Table, Spin } from "antd";
-import { CategoryService } from "../../services/category.service";
-import "./categories.css";
+import { AddressesService } from "../../services/address.service.js";
+import "./addresses.css";
 
-const Categories = ({ history }) => {
+const Addresses = ({ history }) => {
 
-    const [categories, setCategories] = useState([]);
+    const [addresses, setAddresses] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        CategoryService.get().then(res => {
-            setCategories(res.data);
+        AddressesService.get().then(res => {
+            setAddresses(res.data);
         }).then(() => setLoading(false));
     },[])
 
     const columns = [
         {
-            title: "Категория",
+            title: "Район",
             dataIndex: "name",
             key: "name",
         },
@@ -28,15 +28,15 @@ const Categories = ({ history }) => {
             render: (id) => (
                 <div>
                     <Button type="primary" onClick={() => {
-                        history.push(`/admin/categories/${ id }`)
+                        history.push(`/admin/addresses/${ id }`)
                     } }>
                         Изменить
                     </Button>
                     <Button danger type="primary" onClick={() => {
                         setLoading(true);
-                        CategoryService.delete(id).then((res) => {
-                            CategoryService.get().then(res => {
-                                setCategories(res.data);
+                        AddressesService.delete(id).then((res) => {
+                            AddressesService.get().then(res => {
+                                setAddresses(res.data);
                                 setLoading(false);
                             })
                         });
@@ -49,12 +49,12 @@ const Categories = ({ history }) => {
     ]
     return(
         loading ? <Spin/> : <div className="section">
-            <Button style={{ marginBottom: "10px" }} type="primary" onClick={() => history.push("/admin/categories/new")}>
+            <Button style={{ marginBottom: "10px" }} type="primary" onClick={() => history.push("/admin/addresses/new")}>
                 Создать
             </Button>
-            <Table dataSource={ categories } columns={ columns } />
+            <Table dataSource={ addresses } columns={ columns } />
         </div>
     )
 }
 
-export default withRouter(Categories);
+export default withRouter(Addresses);

@@ -37,7 +37,7 @@ const Subcategories = ({ history }) => {
             render: (id) => (
                 <div>
                     <Button type="primary" onClick={() => {
-                        history.push(`/subcategories/${ id }`)
+                        history.push(`/admin/subcategories/${ id }`)
                     } }>
                         Изменить
                     </Button>
@@ -59,7 +59,7 @@ const Subcategories = ({ history }) => {
 
     return(
         !loading ? <div className="section">
-            <Button style={{ marginBottom: "10px" }} type="primary" onClick={() => history.push("/subcategories/new")}>
+            <Button style={{ marginBottom: "10px" }} type="primary" onClick={() => history.push("/admin/subcategories/new")}>
                 Создать
             </Button>
             <Table dataSource={ subcategories } columns={ columns } />

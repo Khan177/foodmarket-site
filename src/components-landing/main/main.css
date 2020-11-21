@@ -1,0 +1,14 @@
+main{
+    background-color: #fff;
+    margin: 3% 5%;
+    display: flex;
+    justify-content: center;
+}
+.section{
+    width: 100%;
+}
+@media screen and (max-width: 1200px){
+    main{
+        margin: 3% 2%;
+    }
+}

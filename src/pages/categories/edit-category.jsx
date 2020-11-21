@@ -6,7 +6,7 @@ import { UploadOutlined } from "@ant-design/icons";
 
 const EditCategory = ({ history }) => {
 
-    const id = matchPath(history.location.pathname, { path: '/categories/:id' }).params.id;
+    const id = matchPath(history.location.pathname, { path: '/admin/categories/:id' }).params.id;
 
     const [category, setCategory] = useState({name: "", image: ""});
     const [loading, setLoading] = useState(true);
@@ -28,11 +28,11 @@ const EditCategory = ({ history }) => {
             Object.keys(category).forEach((v) => formData.append(v, category[v]));
             if(id === "new")
                 CategoryService.post(formData).then(res => {
-                    history.push("/categories");
+                    history.push("/admin/categories");
                 })
             else
                 CategoryService.put(id,formData).then(res => {
-                    history.push("/categories");
+                    history.push("/admin/categories");
                 })
         }
         else{
@@ -65,7 +65,7 @@ const EditCategory = ({ history }) => {
                         Сохранить
                     </Button>
                     <Button type="primary" danger onClick={() => {
-                        history.push("/categories")
+                        history.push("/admin/categories")
                     }}>
                         Отменить
                     </Button>

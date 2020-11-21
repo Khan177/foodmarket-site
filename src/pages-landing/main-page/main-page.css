@@ -1,0 +1,9 @@
+.main-page{
+    padding: 0 10%;
+    width: 100%;
+}
+@media screen and (max-width: 1200px){
+    .main-page{
+        padding: 0;
+    }
+}

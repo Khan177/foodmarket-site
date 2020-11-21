@@ -7,7 +7,7 @@ import { UploadOutlined } from "@ant-design/icons";
 
 const EditProduct = ({ history }) => {
 
-    const id = matchPath(history.location.pathname, { path: '/products/:id' }).params.id;
+    const id = matchPath(history.location.pathname, { path: '/admin/products/:id' }).params.id;
 
     const [subcategories, setSubcategories] = useState([]);
     const [product, setProduct] = useState({name: "", subcategoryId: "", image: "", price: "", file: ""});
@@ -38,11 +38,11 @@ const EditProduct = ({ history }) => {
             Object.keys(product).forEach((v) => formData.append(v, product[v]));
             if(id === "new")
                 ProductsService.post(formData).then(res => {
-                    history.push("/products");
+                    history.push("/admin/products");
                 })
             else
                 ProductsService.put(id,formData).then(res => {
-                    history.push("/products");
+                    history.push("/admin/products");
                 })
         }
         else{
@@ -92,7 +92,7 @@ const EditProduct = ({ history }) => {
                         Сохранить
                     </Button>
                     <Button type="primary" danger onClick={() => {
-                        history.push("/products")
+                        history.push("/admin/products")
                     }}>
                         Отменить
                     </Button>

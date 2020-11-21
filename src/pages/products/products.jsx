@@ -44,7 +44,7 @@ const Products = ({ history }) => {
             render: (id) => (
                 <div>
                     <Button type="primary" onClick={() => {
-                        history.push(`/products/${ id }`)
+                        history.push(`/admin/products/${ id }`)
                     } }>
                         Изменить
                     </Button>
@@ -65,7 +65,7 @@ const Products = ({ history }) => {
     ]
     return(
         !loading ? <div className="section">
-            <Button style={{ marginBottom: "10px" }} type="primary" onClick={() => history.push("/products/new")}>
+            <Button style={{ marginBottom: "10px" }} type="primary" onClick={() => history.push("/admin/products/new")}>
                 Создать
             </Button>
             <Table dataSource={ products } columns={ columns } />

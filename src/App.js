@@ -1,12 +1,15 @@
 import './App.css';
-import Header from "./components/header/header";
 import Main from "./components/main/main";
+import MainLanding from "./components-landing/main/main";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Main/>
+      <Switch>
+        <Route path="/admin" component={ Main } />
+        <Route path="/" component={ MainLanding } />
+      </Switch>
     </div>
   );
 }

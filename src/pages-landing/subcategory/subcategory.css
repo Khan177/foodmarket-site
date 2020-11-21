@@ -1,0 +1,10 @@
+.subcategory-landing{
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px){
+    .subcategory-landing{
+        width: 100%;
+        
+    }
+}
