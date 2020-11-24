@@ -3,7 +3,8 @@ import { ProductsService } from '../../services/items.service';
 import { withRouter, matchPath } from "react-router-dom";
 import { Spin } from "antd";
 import { SubCategoryService } from '../../services/category.service';
-import ProductCard from "../category/product-card"
+import ProductCard from "../category/product-card";
+import "./subcategory.css"
 
 const Subcategory = ({ history }) => {
     const [ products, setProducts ] = useState([]);

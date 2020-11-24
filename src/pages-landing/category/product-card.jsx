@@ -7,7 +7,6 @@ import { Button } from 'antd';
 import './category.css';
 
 const ProductCard = ({products}) => {
-    console.log(products);
     return(
         <div className="products-container">
             {
@@ -18,7 +17,6 @@ const ProductCard = ({products}) => {
 }
 
 const Card = withRouter(({ productt }) => {
-    console.log(productt)
 
     const dispatch = useDispatch();
     const state = useSelector(state => state);
