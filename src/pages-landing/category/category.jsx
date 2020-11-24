@@ -14,7 +14,7 @@ const Category = ({ history }) => {
     
     useEffect(() => {
         SubCategoryService.get().then((res) => {
-            setSubcategories(res.data);
+            setSubcategories(res.data.filter(subcat => subcat.categoryId == id));
             CategoryService.getById(id).then((res) => {
                 setCategory(res.data);
             })

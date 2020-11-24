@@ -10,6 +10,7 @@ import Subcategory from "../../pages-landing/subcategory/subcategory";
 import { useSelector } from "react-redux";
 import Selected from "../../pages-landing/selected/selected";
 import HeaderMobile from "../header/header-mobile";
+import Search from "../../pages-landing/search/search";
 
 const Main = () => {
     const showSelected = useSelector(state => state.showSelected)
@@ -23,6 +24,7 @@ const Main = () => {
                 <Route exact path="/categories/:id" component={ Category }/>
                 <Route exact path="/subcategories/:id" component={ Subcategory }/>
                 <Route exact path="/selected" component={ Selected }/>
+                <Route exact path="/search" component={ Search }/>
             </Switch>
         </main>
         <Footer/>

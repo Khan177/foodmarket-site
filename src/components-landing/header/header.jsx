@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import "./header.css";
 import { Link } from "react-router-dom";
 import { Input } from "antd";
-import { changeSelectedStage } from "../../store/actions";
+import { changeSelectedStage, setSearchName } from "../../store/actions";
 
-const Header = (history) => {
+const Header = ({history}) => {
     const route = matchPath(history.location.pathname, { path: '/:route' });
     const selectedStage = useSelector(state => state.selectedStage);
     const dispatch = useDispatch();
@@ -31,7 +31,15 @@ const Header = (history) => {
                 </div>
             </div>
             <div className="header-bottom">
-                <Input placeholder="Поиск по товарам"/>
+                <Input placeholder="Поиск по товарам" onChange={(e) => {
+                    if(e.target.value == ""){
+                        history.push("/");
+                    }
+                    else{
+                        dispatch(setSearchName(e.target.value));
+                        history.push(`/search`);
+                    }
+                }}/>
             </div>
         </header>
     )

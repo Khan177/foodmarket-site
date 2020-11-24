@@ -34,6 +34,7 @@ const Selected = () => {
     const dispatch = useDispatch();
     const selectedStage = useSelector(state => state.selectedStage);
     const submitForm = () => {
+        console.log(paymentType)
         if(paymentType[0] == true){
             setNewOrder({...newOrder, paymentInfo: "Оплата картой"});
         }
@@ -55,8 +56,7 @@ const Selected = () => {
                 totalPrice+=pro.count*Number(pro.price);
                 return null;
             })
-            setNewOrder({...newOrder,paymentInfo: `${newOrder.paymentInfo}, Сдача с суммы: ${newOrder.sdacha}`,totalPrice, products, address: `${newOrder.dist}, ${newOrder.street}, ${newOrder.house}`})
-            OrdersService.post(newOrder).then((res) => {
+            OrdersService.post({...newOrder,totalPrice, products, address: `${newOrder.dist}, ${newOrder.street}, ${newOrder.house}`}).then((res) => {
                 dispatch(changeSelectedStage(3));
                 dispatch(clearSelected())
             })

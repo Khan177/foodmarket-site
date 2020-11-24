@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./orders.css";
 import { OrdersService } from "../../services/orders.service";
-import { Table, Button, Tag, Select, Spin } from "antd";
+import { Table, Button, Tag, Select, Spin, Modal } from "antd";
 
 const Orders = () => {
 
     const [orders, setOrders] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
     const [currentOrderProducts, setCurrentOrderProducts] = useState([]);
     const [filteredOrders, setFilteredOrders] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -30,6 +31,11 @@ const Orders = () => {
             key: "name",
         },
         {
+            title: "Адрес",
+            dataIndex: "address",
+            key: "address",
+        },
+        {
             title: "Телефон",
             dataIndex: "phone",
             key: "phone",
@@ -48,7 +54,7 @@ const Orders = () => {
             title: "Продукты",
             dataIndex: "products",
             key: "products",
-            render: (products) => <Button type="link" onClick={() => setCurrentOrderProducts(products)}>Список</Button>,
+            render: (products) => <Button type="link" onClick={() => {setOpenModal(true); setCurrentOrderProducts(products)}}>Список</Button>,
 
         },
         {
@@ -80,6 +86,18 @@ const Orders = () => {
                 </Option>
             </Select>
             <Table columns={ columns } dataSource={ filteredOrders } />
+            <Modal visible={openModal} title="Список продуктов" onOk={() => setOpenModal(false)} onCancel={() => setOpenModal(false)}>
+                {
+                    currentOrderProducts && currentOrderProducts.map((prod) => (
+                        <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto', columnGap: '30px' }}>
+                            <span>{prod.name}</span>
+                            <span>{`Количество: ${prod.count}`}</span>
+                            <span>{`Цена: ${prod.count*prod.price}`}</span>
+                        </div>
+                        )
+                    )
+                }
+            </Modal>
         </div>
     )
 }

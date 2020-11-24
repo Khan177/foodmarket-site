@@ -5,9 +5,23 @@ export const addToSelected = (item) => {
     }
 }
 
+export const setSearchName = (name) => {
+    return {
+        type: "SET_SEARCH_NAME",
+        payload: name,
+    }
+}
+
 export const clearSelected = () => {
     return {
         type: "CLEAR_SELECTED",
+    }
+}
+
+export const setAllProducts = (products) => {
+    return{
+        type: "SET_ALL_PRODUCTS",
+        payload: products,
     }
 }
 

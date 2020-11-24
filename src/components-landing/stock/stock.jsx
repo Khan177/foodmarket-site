@@ -34,7 +34,7 @@ const Stocks = () => {
                 {
                     stocks.map(stock => (
                         <div className="stock-div">
-                            <div style={{ width:'50%', display: 'flex',justifyContent: 'center', flexDirection: 'column', position:'relative', height: '100%' }} >
+                            <div style={{ width:'50%', display: 'flex',justifyContent: 'center', flexDirection: 'column', position:'relative', height: '100%', alignItems: 'center' }} >
                                 <div style={{ backgroundColor: 'black', position: 'absolute', width: '100%', height: '100%', opacity: 0.6, borderTopLeftRadius: '20px', borderBottomLeftRadius: '20px' }}></div>
                                 <h1 style={{ color: 'white', zIndex: 1, padding: '0 20%' }}>{stock.title}</h1>
                                 <p style={{ zIndex: 1, padding: '0 20%' }}>{stock.text}</p>

@@ -14,7 +14,7 @@ const Subcategory = ({ history }) => {
 
     useEffect(() => {
         ProductsService.get().then((res) => {
-            setProducts(res.data);
+            setProducts(res.data.filter(prod => prod.subcategoryId == id));
             SubCategoryService.getById(id).then((res) => {
                 setSubcategory(res.data);
             }).then(() => {

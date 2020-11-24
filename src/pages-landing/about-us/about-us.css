@@ -1,0 +1,24 @@
+.about-us{
+    display: flex;
+    justify-content: space-between;
+}
+.about-us-first{
+    width: 40%;
+}
+.about-us-second{
+    width: 55%;
+}
+.about-us-second img{
+    width: 100%;
+}
+@media screen and (max-width: 1200px){
+    .about-us{
+        flex-direction: column-reverse;
+    }
+    .about-us-first{
+        width: 100%;
+    }
+    .about-us-second{
+        width: 100%;
+    }
+}
