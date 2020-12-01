@@ -15,6 +15,13 @@
     border: 1px solid #6FCF97;
     border-radius: 10px;
 }
+.product-button2{
+    margin-top: 10px;
+    width: 100px;
+    color: #6FCF97;
+    border: none;
+    background-color: none;
+}
 .product-button:hover{
     color: #6FCF97;
     background-color: white;
@@ -58,14 +65,15 @@
         grid-template-columns: auto;
     }
     .products-card-image{
-        width: 150px;
+        width: 120px;
+        height: 100px
     }
     .products-landing{
         width: 100%;
-        height: 150px;
+        height: 100px;
         overflow: hidden;
         display:grid;
-        grid-template-columns: 40% 40% 20%;
+        grid-template-columns: auto auto auto;
     }
     .product-info{
         justify-content: flex-start;

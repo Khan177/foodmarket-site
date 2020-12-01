@@ -43,7 +43,7 @@ const Card = withRouter(({ productt }) => {
                 </div>
             </div>
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-end' , padding: '10px 0'}}>
-            { state.selectedItems.filter(item => item._id == productt._id).length ? <span style={{ color: '#6FCF97' }}>В корзине</span> : <button className="product-button" onClick={() => dispatch(addToSelected(product))}>В корзину</button>}
+            { state.selectedItems.filter(item => item._id == productt._id).length ? <button className="product-button2" disabled style={{ color: '#6FCF97' }}>В корзине</button> : <button className="product-button" onClick={() => dispatch(addToSelected(product))}>В корзину</button>}
             </div>
         </div>
     )
