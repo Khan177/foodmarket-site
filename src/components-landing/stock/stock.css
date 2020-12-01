@@ -15,8 +15,12 @@
 @media screen and (max-width: 1200px){
     .stock-div{
         width: 60%;
-        height: 250px;
+        height: 200px;
     }
-    .stocks-temp{
+    .stock-div h1{
+        font-size: 1.5em;
+    }
+    .stock-div p{
+        font-size: 0.8em;
     }
 }
