@@ -19,7 +19,19 @@ const Orders = () => {
     },[])
 
     const handleOrderStatusChange = (id) => {
-        OrdersService.put(id);
+        OrdersService.put(id).then((res) => OrdersService.get().then((res) => {
+            setOrders(res.data);
+            setFilteredOrders(res.data.filter(order => !order.status))
+        }));
+    }
+
+    const deleteOrder = (id) => {
+        OrdersService.delete(id).then(res => {
+            OrdersService.get().then(res => {
+                setOrders(res.data);
+                setFilteredOrders(res.data.filter(order => order.status));
+            })
+        })
     }
 
     const Option = { Select }
@@ -67,7 +79,7 @@ const Orders = () => {
             title: "Переключить статус",
             dataIndex: "_id",
             key: "_id",
-            render: (id) => <Button type="primary" onClick={() => handleOrderStatusChange(id)}>Переключить статус</Button>
+            render: (id) => orders.filter(ord => ord._id == id && ord.status == 0).length > 0 ? <Button type="primary" onClick={() => handleOrderStatusChange(id)}>Переключить статус</Button>:<Button type="primary" onClick={() => deleteOrder(id)}>Удалить</Button> 
         }
     ]
 
@@ -75,7 +87,7 @@ const Orders = () => {
         loading ? <Spin/> : <div style={{ textAlign: "left" }}>
             <Select 
                 style={{width: 120, marginBottom: 15}}
-                defaultValue={ 0 } 
+                defaultValue={ "Новые" } 
                 onChange={(status) => setFilteredOrders(orders.filter(order => order.status == status))}
             >
                 <Option value={ "0" }>
