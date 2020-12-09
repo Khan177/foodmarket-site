@@ -19,7 +19,7 @@ const Main = ({history}) => {
     return(
     <div style={{position: 'relative'}}>
         { window.innerWidth > 1200 ? <Header/> : <HeaderMobile/>}
-        <Draggable><div onClick={() => {  history.push('/selected') }} style={{ width: '50px', height: '50px', backgroundColor: '#6FCF97', borderRadius: '50%', display: 'flex', cursor: 'pointer', alignItems: 'center', justifyContent: 'center'}}><ShoppingCartOutlined style={{fontSize: '30px', color: 'white'}}/></div></Draggable>
+        <Draggable><div onClick={() => {  history.push('/selected') }} style={{ marginLeft: "auto", width: '65px', height: '65px', backgroundColor: '#6FCF97', borderRadius: '50%', display: 'flex', cursor: 'pointer', alignItems: 'center', justifyContent: 'center'}}><ShoppingCartOutlined style={{fontSize: '30px', color: 'white'}}/></div></Draggable>
         <main style={{minHeight: '70vh'}}>
             <Switch>
                 <Route exact path="/" component={ MainPage }/>
