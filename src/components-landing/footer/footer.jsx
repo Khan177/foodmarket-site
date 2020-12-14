@@ -5,7 +5,7 @@ const Footer = () => {
     return(
         <footer>
             <div className="header-logo">
-                <img style={{ width: '100%' }} src="/assets/logo.png" alt=""/>
+                <img style={{ width: '150px' }} src="/assets/logo.png" alt=""/>
             </div>
             {window.innerWidth > 1200 && <div className="header-info">
                 <a href="" className="header-phone">+7(777)-777-77-77</a>

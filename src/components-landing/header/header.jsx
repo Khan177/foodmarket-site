@@ -18,7 +18,7 @@ const Header = ({history}) => {
         <header className="header-landing">
             <div className="header-top">
                 <div className="header-logo">
-                    <img src="/assets/logo.png" alt=""/>
+                    <img style={{ width: '200px' }} src="/assets/logo.png" alt=""/>
                 </div>
                 <nav className="header-nav">
                     <Link to="/"><span style={ !route || !route.params.route.includes('about-us') && !route.params.route.includes('selected') ? {color: '#EB5757'} : null}>Главная</span></Link>

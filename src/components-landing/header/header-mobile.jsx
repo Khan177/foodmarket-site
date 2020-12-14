@@ -34,7 +34,7 @@ const HeaderMobile = ({history}) => {
                     {openSider ? <CloseOutlined onClick={() => setOpenSider(false)}  style={{color: "#EB5757", fontSize: '20px'}}/> :<MenuOutlined onClick={() => setOpenSider(true)} style={{color: "#EB5757", fontSize: '20px'}}/>}
                 </div>
                 <div className="header-logo">
-                    <img style={{width: '100%'}} src="/assets/logo.png" alt=""/>
+                    <img style={{width: '150px'}} src="/assets/logo.png" alt=""/>
                 </div>
             </div>
             <div className="header-bottom">
