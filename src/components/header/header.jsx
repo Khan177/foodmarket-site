@@ -5,7 +5,7 @@ import "./header.css";
 
 const Header = () => (
     <header className="admin-header">
-        <img src="/assets/logo.png" alt=""/>
+        <img style={{ width: '200px' }} src="/assets/logo.png" alt=""/>
         <nav>
             <Link to="/admin/orders">
                 <Button size="large">
