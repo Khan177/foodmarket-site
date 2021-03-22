@@ -13,7 +13,7 @@ const Selected = () => {
     const initial = {
         name: "",
         phone: "",
-        dist: "",
+        dist: "Защита",
         street: "",
         house: "",
         paymentInfo: "",
@@ -34,14 +34,14 @@ const Selected = () => {
     const dispatch = useDispatch();
     const selectedStage = useSelector(state => state.selectedStage);
     const submitForm = () => {
-        console.log(paymentType)
-        if(paymentType[0] == true){
+        console.log(newOrder)
+        if(paymentType[0]){
             setNewOrder({...newOrder, paymentInfo: "Оплата картой"});
         }
-        else if(paymentType[2] == true){
+        else if(paymentType[2]){
             setNewOrder({...newOrder, paymentInfo: "Каспи перевод"});
         }
-        else if(paymentType[1] == true && !newOrder.sdacha){
+        else if(paymentType[1] && !newOrder.sdacha){
             setNewOrder({...newOrder, paymentInfo: "Оплата наличными" + newOrder.sdacha});
         }
         else{
